@@ -17,19 +17,24 @@ public:
         cout << "Оценки: " << grade1 << ", " << grade2 << ", " << grade3 << endl;
         cout << "Средний балл: " << average << endl;
         
-        if (average >= 90) {
-            cout << "Отлично!" << endl;
-        } else if (average >= 75) {
-            cout << "Хорошо" << endl;
-        } else if (average >= 60) {
-            cout << "Удовлетворительно" << endl;
-        } else {
-            cout << "Неудовлетворительно" << endl;
-        }
+        cout << getGradeLevel(average) << endl;
         
         return average;
     }
+
+    string getGradeLevel(double average) {
+        if (average >= 90) {
+            return "Отлично!";
+        } else if (average >= 75) {
+            return "Хорошо";
+        } else if (average >= 60) {
+            return "Удовлетворительно";
+        } else {
+            return "Неудовлетворительно";
+        }
+    }
 };
+
 
 int main() {
     GradeCalculator calc;
